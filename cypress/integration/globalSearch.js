@@ -8,5 +8,7 @@ describe('Startpage', function() {
     it('GlobalSearchTest', function () {
         cy.visit('/');
         cy.get('#globalSearch input[type="search"]').type('Peter').should('have.value', 'Peter');
+        cy.get('#globalSearch input[type="search"]').type('{enter}');
+        cy.screenshot('globalSearch_result');
     })
 })
