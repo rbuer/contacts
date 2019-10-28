@@ -71,3 +71,7 @@ cypress/screenshots
 
 # misc
 .DS_Store
+
+#IDEs
+.idea
+.vscode
