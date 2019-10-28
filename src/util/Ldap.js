@@ -1,15 +1,15 @@
 //var ldapper = require('ldapjs');
 
 const Ldap={
-
-    search(){
-        let contacts = [
+    contacts: [],
+    loadContacts(){
+        return [
             {
-              id: '1',
-              firstname: "bla6",
-              lastname: "blubb",
-              office: "fuzz",
-              organisation: "SPD",
+            id: '1',
+            firstname: "bla6",
+            lastname: "blubb",
+            office: "fuzz",
+            organisation: "SPD",
             },
             {
                 id: '2',
@@ -32,9 +32,13 @@ const Ldap={
                 office: "fuzz3",
                 organisation: "SPD3",
             },
-        ]
-
-        return contacts;
+        ];
+    },
+    getContacts(){    
+        if(this.contacts.length === 0){        
+            this.contacts = this.loadContacts();
+        }
+        return this.contacts;
     }
 }
 

@@ -10,7 +10,7 @@ class ContactsList extends Component {
 
 
     handleOnSort(event, field, nextSortDirection){
-        this.props.onSort(event, field, nextSortDirection);
+        this.props.onSort(field, nextSortDirection);
     }
 
     render(){
@@ -29,8 +29,6 @@ class ContactsList extends Component {
             </Table>
         );
     }
-
-
 
 }
 

@@ -7,7 +7,7 @@ class GlobalSearch extends Component {
     constructor(props){
         super(props);
         this.searchInput=React.createRef();
-        this.handleSearchContacts=this.handleSearchContacts.bind(this);
+        this.handleSearch=this.handleSearch.bind(this);
         this.handleSearchKeyUp=this.handleSearchKeyUp.bind(this);
     }
 
@@ -15,13 +15,13 @@ class GlobalSearch extends Component {
         this.searchInput.current.focus();
     }
 
-    handleSearchContacts(e){
+    handleSearch(e){
         this.props.onSearch(e.target.value);
     }
 
     handleSearchKeyUp(e){
         if(e.key==='Enter'){
-            this.handleSearchContacts(e);
+            this.handleSearch(e);
         }
     }
 
