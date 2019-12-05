@@ -1,34 +1,26 @@
-import React, { Component } from 'react';
+import React, {  } from 'react';
 import PropType from 'prop-types';
 import { Table, Column } from 'react-rainbow-components';
 
-class ContactsList extends Component {
-    constructor(props){
-        super(props);
-        this.handleOnSort = this.handleOnSort.bind(this);
+const ContactsList = (props) => {
+    const handleOnSort = (event, field, nextSortDirection) => {
+        props.onSort(field, nextSortDirection);
     }
 
-
-    handleOnSort(event, field, nextSortDirection){
-        this.props.onSort(field, nextSortDirection);
-    }
-
-    render(){
-        return (
-            <Table
-                keyField="id"
-                data={this.props.contacts}
-                onSort={this.handleOnSort}
-                sortDirection={this.props.sortDirection}
-                sortedBy={this.props.sortedBy}
-            >
-                <Column header="Vorname" field="firstname"  sortable />
-                <Column header="Nachmane" field="lastname"  sortable />
-                <Column header="Büro" field="office" sortable />
-                <Column header="Org" field="organisation" sortable />
-            </Table>
-        );
-    }
+    return (
+        <Table
+            keyField="id"
+            data={props.contacts}
+            onSort={handleOnSort}
+            sortDirection={props.sortDirection}
+            sortedBy={props.sortedBy}
+        >
+            <Column header="Vorname" field="firstname"  sortable />
+            <Column header="Nachmane" field="lastname"  sortable />
+            <Column header="Büro" field="office" sortable />
+            <Column header="Org" field="organisation" sortable />
+        </Table>
+    );
 
 }
 
