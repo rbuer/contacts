@@ -11,10 +11,6 @@ const App = () => {
     const [sortedBy, setSortedBy] = useState("");
     const [sortDirection, setSortDirection] = useState("asc");
 
-    // getContacts() {
-    //     this.setState({ contacts: Ldap.getContacts() });
-    // }
-
     const searchData = (searchString) => {
         const ldapConntacts = (Ldap.getContacts());
         const filteredContacts = [];
