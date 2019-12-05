@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, createRef } from 'react';
 import PropType from 'prop-types';
 import { Input } from 'react-rainbow-components';
 
 const GlobalSearch = (props) => {
-    const searchInput=useRef(null);;
+    const searchInput=createRef(null);
 
     useEffect(() => {
         searchInput.current.focus();   
@@ -28,7 +28,7 @@ const GlobalSearch = (props) => {
     );
 }
 
-GlobalSearch.propType = {
+GlobalSearch.propTypes = {
     onSearch: PropType.func.isRequired,
 }
 

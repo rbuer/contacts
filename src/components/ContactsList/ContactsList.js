@@ -24,7 +24,7 @@ const ContactsList = (props) => {
 
 }
 
-ContactsList.propType = {
+ContactsList.propTypes = {
     contacts: PropType.array.isRequired,
     sortedBy: PropType.string.isRequired,
     sortDirection: PropType.string.isRequired,
