@@ -75,3 +75,4 @@ cypress/screenshots
 #IDEs
 .idea
 .vscode
+*.iml
